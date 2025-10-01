@@ -77,6 +77,6 @@ gcloud compute ssh linux-lab-vm --zone asia-south1-a
 Once connected to your VM, run the following commands to confirm everything is working:
 
 ```bash
-uname -a           # Display kernel information
-lsb_release -a     # Show Linux distribution details
-pwd                # Print the current working directory
+uname -a          # Display kernel information
+lsb_release -a    # Show Linux distribution details
+pwd               # Print the current working directory
