@@ -5,7 +5,7 @@ This course takes you from the fundamentals of Linux all the way to advanced tro
 
 ---
 
-## 📅 Curriculum Overview
+## Curriculum Overview
 
 ### Core Track (Day 0–26)
 
