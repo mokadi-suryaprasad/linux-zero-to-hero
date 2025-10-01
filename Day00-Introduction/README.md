@@ -60,11 +60,12 @@ Common distributions and their use cases:
 ### Step 3: Create VM Instance
 1. Click **Create Instance**.  
 2. Name: `linux-lab-vm`  
-3. Region & Zone: `asia-south1` (example)  
+3. Region & Zone: `asia-south1` 
 4. Machine Type: `e2-medium` (2 vCPU, 4 GB RAM)  
 5. Boot Disk: **Ubuntu 22.04 LTS**  
-6. Enable **Allow HTTP/HTTPS traffic** if required  
-7. Click **Create**
+6. Enable **Allow HTTP/HTTPS traffic** if required
+7. Enable **Allow SSH traffic**  
+8. Click **Create**
 
 ### Step 4: Connect to VM
 - Using **GCP Web SSH**: Click **SSH** next to your instance.  
