@@ -196,15 +196,5 @@ This file explains what happens when we type the `ls` command in Linux.
 - Run:  
   ```bash
   uname -r
-```
-
----
-
-# ✅ Checklist
-- [x] Know what Linux is & its history  
-- [x] Understand kernel vs distribution  
-- [x] Tried package managers (apt/yum)  
-- [x] Launched 2 Linux instances  
-- [x] Ran commands & scripts  
-- [x] Prepared interview answers  
+``` 
 
