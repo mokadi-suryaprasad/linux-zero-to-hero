@@ -104,71 +104,39 @@ This file explains what happens when we type the `ls` command in Linux.
 
 ---
 
-## 1. You Type `ls`
-- You type `ls` in the terminal.
-- The shell (like `bash`) receives your command.
+## Steps
+
+1. **You type `ls`**
+   - The shell (like `bash`) receives your command.
+
+2. **Shell finds the command**
+   - Checks if `ls` is built-in (it’s not).
+   - Looks in `$PATH` directories.
+   - Finds the program at `/bin/ls`.
+
+3. **Kernel runs the program**
+   - Loads `/bin/ls` into memory.
+   - Creates a new process.
+   - Connects input/output to the terminal.
+
+4. **`ls` executes**
+   - Reads directory contents using system calls:
+     - `opendir()`
+     - `readdir()`
+     - `stat()`
+
+5. **Result shown**
+   - Output goes to `stdout` (your terminal).
+
+6. **Process ends**
+   - `ls` exits with code `0`.
+   - Shell shows a new prompt.
 
 ---
 
-## 2. Shell Finds the Command
-- The shell checks if `ls` is a built-in command. (It is not.)
-- Then it looks in the folders listed in the `$PATH` variable.
-- It finds the program at `/bin/ls`.
+## Diagram
 
-```bash
-echo $PATH
-/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-```
-### 3. Kernel Starts the Program
-
-- The shell asks the Linux kernel to run /bin/ls.
-
-- The kernel:
-
-  - Loads the ls program into memory.
-
-  - Creates a new process for it.
-
-  - Connects input, output, and error to the terminal.
-
-### 4. ls Runs
-
-- The ls program asks the system for:
-
-  - Directory contents (opendir, readdir)
-
-  - File details (stat)
-
-- It collects names, sizes, owners, and permissions.
-
-### 5. Show the Result
-
-- The program writes the result to stdout (your screen).
-
-- The kernel sends the output to your terminal (/dev/tty).
-
-### 6. End
-
-- ls finishes and gives an exit code (0 if success).
-
-- The shell shows a new prompt so you can type again.
-
-### Simple Flow
-
-You type ls
-   ↓
-Shell finds /bin/ls
-   ↓
-Kernel runs the program
-   ↓
-ls reads the folder details
-   ↓
-Shows result on screen
-   ↓
-Program ends, shell waits for next command
-
-### Diagram
-
+```text
 +------------+        +------------+        +-------------+
 |   Shell    | -----> |   Kernel   | -----> |  Hardware   |
 +------------+        +------------+        +-------------+
@@ -179,8 +147,7 @@ Program ends, shell waits for next command
 +------------+        | - readdir   |       +-------------+
                       | - stat      |
                       +-------------+
-
-
+```
 
 # 🤔 Interview Questions with Answers (Day 01)
 
