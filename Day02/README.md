@@ -141,16 +141,16 @@ reboot
 
 - Test ping between them
 
-# Virtualization & Linux Interview Questions
+### Virtualization & Linux Interview Questions
 
-## 1. What is VirtualBox?
+#### 1. What is VirtualBox?
 VirtualBox is an open-source **type 2 hypervisor** developed by Oracle.  
 It allows you to run multiple operating systems (called *guest OS*) on a single physical machine (called *host OS*).  
 Example: You can run Linux inside a Windows system using VirtualBox.
 
 ---
 
-## 2. Difference between Type 1 and Type 2 Hypervisors
+#### 2. Difference between Type 1 and Type 2 Hypervisors
 | Feature | Type 1 (Bare-metal) | Type 2 (Hosted) |
 |---------|----------------------|-----------------|
 | Installation | Runs directly on hardware | Runs on top of host OS |
@@ -160,7 +160,7 @@ Example: You can run Linux inside a Windows system using VirtualBox.
 
 ---
 
-## 3. Why use Snapshots?
+#### 3. Why use Snapshots?
 - A **snapshot** is like a "point-in-time copy" of a VM’s state.  
 - It saves the **disk, memory, and settings** at a particular time.  
 - Benefits:
@@ -170,7 +170,7 @@ Example: You can run Linux inside a Windows system using VirtualBox.
 
 ---
 
-## 4. How do you check network in a VM?
+#### 4. How do you check network in a VM?
 Inside the virtual machine (Linux):
 ```bash
 ifconfig      # Shows IP address, requires net-tools
@@ -179,7 +179,7 @@ ping 8.8.8.8  # Test network connectivity
 ping google.com  # Test DNS resolution
 netstat -tulnp   # Check open ports
 ```
-#### In VirtualBox settings:
+##### In VirtualBox settings:
 
 - Check Network Adapter mode:
 
@@ -189,30 +189,30 @@ netstat -tulnp   # Check open ports
 
   - Host-Only → Communication only between host and VM.
 
-# Linux Boot Process
+### Linux Boot Process
 
-## 5. Steps in Linux Boot Process
+#### 5. Steps in Linux Boot Process
 
-### 1. BIOS / UEFI
+#### 1. BIOS / UEFI
 - Performs **hardware initialization**.
 - Runs **Power-On Self-Test (POST)** to check hardware (CPU, RAM, Disk, etc.).
 - Searches for a **bootable device** (HDD, SSD, USB, CD/DVD).
 
 ---
 
-### 2. MBR / GPT
+#### 2. MBR / GPT
 - **MBR (Master Boot Record)** or **GPT (GUID Partition Table)** stores partition and boot information.
 - Passes control to the **bootloader**.
 
 ---
 
-### 3. Bootloader (GRUB)
+#### 3. Bootloader (GRUB)
 - **GRUB (Grand Unified Bootloader)** is the most common bootloader.
 - Loads and allows selection of the **OS kernel**.
 
 ---
 
-### 4. Kernel
+#### 4. Kernel
 - The **Linux kernel** is loaded into memory.
 - Initializes:
   - CPU
@@ -222,7 +222,7 @@ netstat -tulnp   # Check open ports
 
 ---
 
-### 5. Init / systemd
+#### 5. Init / systemd
 - The first process started (PID **1**).
 - **systemd** (or older `init`) starts all necessary services:
   - Networking
@@ -231,14 +231,14 @@ netstat -tulnp   # Check open ports
 
 ---
 
-### 6. Runlevel / Targets
+#### 6. Runlevel / Targets
 - Defines the system mode:
   - **Multi-user (CLI mode)** → Text-based login.
   - **Graphical (GUI mode)** → Desktop environment.
 
 ---
 
-### 7. Login Prompt
+#### 7. Login Prompt
 - Finally, the **user is presented with a login screen**.
 - After login, the system is fully ready to use.
 
