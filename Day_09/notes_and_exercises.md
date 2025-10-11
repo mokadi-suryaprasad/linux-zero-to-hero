@@ -269,19 +269,4 @@ echo "Server document v1" > ~/test_transfer/docs/server_report.txt
    ls /mnt/sshfs  # Access files
    fusermount -u /mnt/sshfs  # Unmount
    ```
-
-## Completion Checklist
-- [ ] Can transfer files securely using SCP and SFTP (local to server2)
-- [ ] Understand rsync for efficient synchronization (local to server2)
-- [ ] Know how to mount and use NFS shares (server1 to local)
-- [ ] Configured SSH key-based authentication (local to servers)
-- [ ] Understand security implications of each method
-- [ ] Set up and tested FTP (server1 to local, with warnings)
-- [ ] Automated a rsync task via cron (on local)
-
 ---
-
-**End of Day 9!** You've nailed secure transfers and sharing—time to streamline your workflow.
-
-## Next Steps
-Proceed to [Day 10: Environment Variables, Aliases & Shell Customization](../Day_10/notes_and_exercises.md) to customize your shell environment.�
