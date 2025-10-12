@@ -1,56 +1,91 @@
-# 🐧 Linux Zero to Hero – 31 Days Curriculum
+# ☸️ Mastering GKE — 20+ Days Hands-On Learning Series  
+![GKE](https://img.shields.io/badge/GKE-Kubernetes-blue?logo=google-cloud)
+![Terraform](https://img.shields.io/badge/IaC-Terraform-purple?logo=terraform)
+![CI/CD](https://img.shields.io/badge/CI/CD-GitHub%20Actions-black?logo=githubactions)
+![Monitoring](https://img.shields.io/badge/Monitoring-Prometheus%20%7C%20Grafana-orange?logo=grafana)
 
-Welcome to **Linux Zero to Hero**, a **31-day structured learning program** designed for beginners, DevOps engineers, and aspiring SREs.  
-This course takes you from the fundamentals of Linux all the way to advanced troubleshooting, performance tuning, and real-world production scenarios.
-
----
-
-## Curriculum Overview
-
-### Core Track (Day 0–26)
-
-| Day | Topic | Notes & Exercises |
-|-----|-------|------------------|
-| 0   | Introduction & Course Goals | [Day 00](Day00/) |
-| 1   | What is Linux? Kernel, Distributions, and Ecosystem | [Day 01](Day01/) |
-| 2   | Virtualization & Setting Up Linux (VM, WSL, Cloud) | [Day 02](Day02/) |
-| 3   | Linux Folder Structure & File Types | [Day 03](Day03/) |
-| 4   | Linux Boot Process & Service Management | [Day 04](Day04/) |
-| 5   | Basic Linux Commands for DevOps Engineers | [Day 05](Day05/) |
-| 6   | Advanced Linux Commands (grep, awk, sed, find, xargs, etc.) | [Day 06](Day06/) |
-| 7   | Users, Groups & Permissions | [Day 07](Day07/) |
-| 8   | File Management & Editors (nano, vi/vim) | [Day 08](Day08/) |
-| 9   | File Transfer (SCP, SFTP, rsync, FTP, NFS, Samba) | [Day 09](Day09/) |
-| 10  | Environment Variables, Aliases & Shell Customization | [Day 10](Day10/) |
-| 11  | Pipes, Redirects, Wildcards, and Links | [Day 11](Day11/) |
-| 12  | Compression, Archiving, and Backups | [Day 12](Day12/) |
-| 13  | Process Management & Scheduling (cron, at, anacron) | [Day 13](Day13/) |
-| 14  | System Monitoring & Log Management | [Day 14](Day14/) |
-| 15  | Networking & Troubleshooting | [Day 15](Day15/) |
-| 16  | Security, Firewalls & Hardening | [Day 16](Day16/) |
-| 17  | Package Management (apt, yum, dnf, rpm) | [Day 17](Day17/) |
-| 18  | Web Servers (Apache, Nginx, Reverse Proxy) | [Day 18](Day18/) |
-| 19  | Advanced Linux Storage & Filesystems (ext4, xfs, btrfs, quotas, tuning) | [Day 19](Day19/) |
-| 20  | Basic Shell Scripting | [Day 20](Day20/) |
-| 21  | Volume Management (LVM, RAID, Snapshots, Resizing) | [Day 21](Day21/) |
-| 22  | Certificate Management (SSL/TLS, OpenSSL, Certbot) | [Day 22](Day22/) |
-| 23  | Linux Interview Questions & Real-World Scenarios | [Day 23](Day23/) |
-| 24  | System Updates & Patching | [Day 24](Day24/) |
-| 25  | System Hardening | [Day 25](Day25/) |
-| 26  | Mega Project: End-to-End DevOps/Linux Challenge | [Day 26](Day26/) |
+A complete **hands-on learning journey** to master **Google Kubernetes Engine (GKE)** — from Kubernetes fundamentals to advanced production operations.  
+Each day covers a key concept with **labs**, **YAMLs**, and **real GCP implementations**.
 
 ---
 
-### Advanced Track ( Day 27–31)
+## 🧭 Introduction
 
-These advanced Linux topics extend the core 26-day curriculum. Use them to deepen expertise for **senior DevOps, SRE, and Cloud roles**.
+This repository is designed for **DevOps Engineers**, **Cloud Architects**, and **Kubernetes enthusiasts** who want to:
+- Deploy and manage production workloads on **Google Kubernetes Engine (GKE)**
+- Automate infrastructure with **Terraform**
+- Implement **GitOps** with **ArgoCD**
+- Monitor and secure clusters using **Prometheus, Grafana, EFK, and Jaeger**
 
-| Day | Topic | Notes & Exercises |
-|-----|-------|------------------|
-| 27  | Linux Performance Tuning & Optimization (CPU, Memory, I/O, sysctl) | [Day 27](Day27/) |
-| 28  | Linux Containers & Namespaces Internals (namespaces, cgroups, capabilities) | [Day 28](Day28/) |
-| 29  | Advanced Monitoring & Observability (logs, metrics, traces) | [Day 29](Day29/) |
-| 30  | Advanced Security Hardening & Compliance (SELinux/AppArmor, auditd, CIS/STIG) | [Day 30](Day30/) |
-| 31  | Advanced Troubleshooting & Kernel Interaction (strace, perf, eBPF basics) | [Day 31](Day31/) |
+🎯 By the end of this series, you’ll be able to design, deploy, and operate **production-grade clusters on GCP** confidently.
+
+---
+
+## 📅 Learning Roadmap
+
+| Day | Topic | Description |
+|-----|--------|-------------|
+| 🧠 **Day 00** | Why Container Orchestration | Why Docker alone isn’t enough — need for orchestration |
+| 🏗️ **Day 01** | Kubernetes Architecture | Control Plane, Node Components, Scheduler, Controller Manager |
+| ☁️ **Day 02** | GKE Private Cluster | Secure private GKE with Terraform, VPC, Cloud NAT, IAM |
+| 🧩 **Day 03** | Pods | Core execution unit — single & multi-container pods |
+| ⚙️ **Day 04** | Deployments | Rolling updates, rollbacks, and ReplicaSets |
+| 🌐 **Day 05** | Services | ClusterIP, NodePort, LoadBalancer explained |
+| 🧱 **Day 06** | StatefulSets | Running stateful workloads using PVs/PVCs |
+| 🧩 **Day 07** | DaemonSets | Cluster-wide agents (monitoring/logging) |
+| 🚪 **Day 08** | Ingress | Path-based routing, SSL termination |
+| ❤️ **Day 09** | Health Probes | Liveness & Readiness probes |
+| 📏 **Day 10** | Resource Quotas & Limits | Namespace-level resource management |
+| 💾 **Day 11** | Storage | Persistent Volumes and PersistentVolumeClaims |
+| 🗄️ **Day 12** | Cloud SQL Integration | Connect GKE Pods securely to Cloud SQL |
+| 📍 **Day 13** | Node Affinity | Schedule Pods intelligently using node labels |
+| 📊 **Day 14** | Monitoring (Prometheus & Grafana) | Collect and visualize cluster & app metrics |
+| 🧾 **Day 15** | Logging (EFK Stack) | Centralized logging with Elasticsearch, Fluentd, Kibana |
+| 🔍 **Day 16** | Tracing (Jaeger) | Distributed tracing for microservices |
+| ⚡ **Day 17** | Autoscaling | Horizontal/Vertical Pod Autoscalers |
+| 🔐 **Day 18** | Secrets Management | Secure app credentials with GCP Secret Manager |
+| 🧱 **Day 19** | Network Policies | Restrict pod-to-pod communication |
+| 🚀 **Day 20** | GitOps with ArgoCD | Continuous delivery for GKE workloads |
+
+---
+
+## 🧰 Tech Stack
+
+| Category | Tools / Technologies |
+|-----------|----------------------|
+| **Cloud Platform** | Google Cloud Platform (GCP) |
+| **Orchestration** | Kubernetes (GKE) |
+| **IaC** | Terraform |
+| **Containerization** | Docker |
+| **GitOps / CI-CD** | ArgoCD, GitHub Actions |
+| **Monitoring** | Prometheus, Grafana |
+| **Logging** | EFK Stack (Elasticsearch, Fluentd, Kibana) |
+| **Tracing** | Jaeger |
+| **Security** | Trivy, OPA, GCP IAM |
+
+---
+
+## 🧪 Hands-On Labs
+
+Each day includes:
+- ✅ Step-by-step commands  
+- 📘 YAML manifests  
+- ☁️ GCP integration examples  
+- 🧩 Real DevOps use cases  
+
+---
+
+## 👨‍💻 Author
+
+**M Surya Prasad**  
+DevOps Engineer @ TCS | Cloud (GCP & AWS) | Kubernetes | Terraform | CI/CD | ArgoCD  
+🔗 [GitHub Profile](https://github.com/mokadi-suryaprasad)
+
+---
+
+## ⭐ Contribute
+
+Fork this repo, explore, and raise PRs for improvements or new topics.  
+Let’s build the ultimate GKE learning resource together 🚀
 
 ---
