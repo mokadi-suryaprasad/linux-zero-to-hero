@@ -228,27 +228,130 @@ If a web app fails to start because port 80 is “already in use,” use these t
 
 ---
 
-## ⚙️ 🔟 Walk me through diagnosing a network connectivity issue.
+# ⚙️ Day 10 — Diagnosing Network Connectivity Issues (Real-Time Approach)
 
-### 🔹 Real-Time Approach (Based on OSI Model)
-
-| Layer | Check | Command / Action |
-|-------|-------|------------------|
-| **L1 — Physical** | Cable, link | `ip link show`, `ethtool eth0` |
-| **L2 — Data Link** | MAC/ARP issues | `arp -n` |
-| **L3 — Network** | IP, routes | `ping`, `ip route` |
-| **L4 — Transport** | Ports & sockets | `ss -tuln`, `telnet host port` |
-| **L5–L7 — Application** | DNS, service logs | `dig`, `curl`, app logs |
-
-### 🧠 Example Case:
-```bash
-ping 8.8.8.8   # Works
-ping google.com  # Fails
-```
-➡ Root Cause → DNS issue.  
-✅ Fix → Update `/etc/resolv.conf` or restart resolver.
+Networking issues are common in DevOps and Cloud environments — from Pod-to-Pod connectivity failures in Kubernetes to EC2 instances not reaching APIs.  
+A structured, **layer-by-layer approach using the OSI model** helps identify the root cause efficiently.
 
 ---
+
+## 🧩 Understanding the OSI Model for Troubleshooting
+
+| **Layer** | **Focus Area** | **What to Check** | **Example Commands / Actions** |
+|------------|----------------|-------------------|--------------------------------|
+| **L1 — Physical (Hardware)** | Network interface, cable, link status | Ensure the network interface is up and has a carrier signal. | `ip link show` <br> `ethtool eth0` |
+| **L2 — Data Link (MAC & ARP)** | MAC address resolution, ARP cache | Verify ARP table and MAC learning. | `arp -n` <br> `ip neigh show` |
+| **L3 — Network (IP Layer)** | IP addressing, routing, connectivity | Check IP configuration and routing table. | `ip addr show` <br> `ip route` <br> `ping <destination>` |
+| **L4 — Transport (TCP/UDP)** | Ports, sockets, firewall rules | Confirm open ports and service reachability. | `ss -tuln` <br> `netstat -an` <br> `telnet <host> <port>` |
+| **L5–L7 — Application (Session, Presentation, Application)** | DNS, API, web/app-level connectivity | Verify DNS resolution, app health, and logs. | `dig <domain>` <br> `nslookup <domain>` <br> `curl -v <url>` <br> Check service logs |
+
+---
+
+## 🧠 Real-Time Troubleshooting Example
+
+### 🧩 Scenario:
+```bash
+ping 8.8.8.8    # Works
+ping google.com # Fails
+```
+
+🔍 Analysis:
+
+ICMP to 8.8.8.8 (Google DNS IP) works → Network connectivity is fine up to L3 (Network layer).
+
+DNS resolution for google.com fails → Issue lies at L7 (Application layer), specifically DNS.
+
+✅ Root Cause:
+
+DNS resolver is not properly configured or /etc/resolv.conf is missing a valid nameserver.
+
+🛠️ Fix:
+
+Open and check /etc/resolv.conf:
+
+``` bash
+cat /etc/resolv.conf
+```
+
+If it’s empty or incorrect, add a valid nameserver:
+
+```bash
+sudo nano /etc/resolv.conf
+```
+``` bash
+nameserver 8.8.8.8
+nameserver 1.1.1.1
+```
+Restart network service (depending on OS):
+
+``` bash
+sudo systemctl restart systemd-resolved
+```
+Validate again:
+
+``` bash
+dig google.com
+ping google.com
+```
+
+#### 🧰 Common Troubleshooting Commands by Layer
+
+🔹 Layer 1 – Physical
+
+``` bash
+ip link show
+ethtool eth0
+```
+Check interface UP/DOWN status.
+
+Verify link speed, duplex, and carrier.
+
+🔹 Layer 2 – Data Link
+
+``` bash
+arp -n
+ip neigh show
+```
+Confirm ARP entries exist for target IP.
+
+Detect ARP cache issues or stale MAC bindings.
+
+🔹 Layer 3 – Network
+
+``` bash
+ip addr
+ip route
+ping <ip>
+traceroute <ip>
+```
+Ensure proper IP assignment and routing.
+
+Trace network path for possible hops or drops.
+
+🔹 Layer 4 – Transport
+
+``` bash
+ss -tuln
+netstat -an
+telnet <host> <port>
+nc -zv <host> <port>
+```
+Check if application ports are listening.
+
+Validate firewall or security group rules.
+
+🔹 Layer 5–7 – Application
+
+``` bash
+dig <domain>
+nslookup <domain>
+curl -v http://<domain>
+journalctl -u <service>
+```
+Verify DNS resolution.
+
+Inspect HTTP status codes or application logs.
+
 
 ## 🧩 Summary — Key Tools to Remember
 
