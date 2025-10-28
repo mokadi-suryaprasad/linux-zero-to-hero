@@ -185,8 +185,4 @@ ping google.com  # Fails
 > 💬 **Pro Tip:**  
 In interviews, always explain **“how you’d diagnose step by step”** instead of just listing commands. It shows real-world problem-solving skills.
 
----
 
-📘 **Author:** Surya Prasad  
-🚀 **Role:** DevSecOps / Cloud Engineer  
-🧩 **Focus:** AWS | Kubernetes | Terraform | CI/CD | Network Troubleshooting
