@@ -117,6 +117,9 @@ default via 192.168.1.1 dev eth0
 ### 💡 Real-Life Example:
 If you can ping local IPs but **not Google**, your default gateway may be missing or misconfigured.
 
+In interviews, explain that you check the default route with ip route to confirm outbound connectivity.
+If the default route is missing, the VM or server cannot access the internet or external services (like APIs or updates).
+
 ---
 
 ## ⚙️ 7️⃣ How do you troubleshoot “can ping IP but not hostname”?
@@ -149,17 +152,62 @@ sudo systemctl restart systemd-resolved
 
 ### 🔹 Real-Time Explanation:
 
-| Term | Meaning | Likely Cause |
-|------|----------|--------------|
-| **Connection Refused** | Host reachable but port closed | Service not running or port blocked |
-| **Connection Timeout** | No response from host | Firewall, routing, or host unreachable |
+| Term                   | Meaning                        | Likely Cause                           |
+| ---------------------- | ------------------------------ | -------------------------------------- |
+| **Connection Refused** | Host reachable but port closed | Service not running or port blocked    |
+| **Connection Timeout** | No response from host          | Firewall, routing, or host unreachable |
 
-**Example:**
+---
+
+### 🔹 Real-Time Telnet Example
+
 ```bash
-telnet 10.0.0.5 22
-# Connection refused → SSH service stopped
-# Connection timed out → Network/firewall issue
+# Test SSH port (22)
+telnet 34.47.225.94 22
 ```
+
+**Output:**
+
+```
+Trying 34.47.225.94...
+Connected to 34.47.225.94.
+Escape character is '^]'.
+SSH-2.0-OpenSSH_9.9p1 Ubuntu-3ubuntu3.2
+```
+
+**Interpretation:**
+
+* Successfully connected → SSH service is running and reachable.
+* Shows SSH server version (`OpenSSH_9.9p1`).
+
+```bash
+# Test HTTP port (80)
+telnet 34.47.225.94 80
+```
+
+**Output:**
+
+```
+Trying 34.47.225.94...
+^C
+```
+
+**Interpretation:**
+
+* Connection timed out → port 80 is not reachable.
+* Possible reasons:
+
+  * Service not running on port 80
+  * Firewall/security group blocking the port
+  * Network issue
+
+---
+
+### 🧠 Key Takeaways:
+
+* **Connection Refused** → Service exists but port is closed
+* **Connection Timed Out** → Network/firewall issue
+* `telnet` is a quick tool to verify **port-level connectivity** in real-time
 
 ---
 
