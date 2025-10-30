@@ -9,16 +9,16 @@ Linux is an open-source operating system based on the Unix architecture.
 
 ## 2. How to check the Linux version?
 
-   ``` bash 
-    cat /etc/os-release
-    uname -a
-   ```
+``` bash 
+cat /etc/os-release
+uname -a
+```
 
 ## 3. How to check the list of users?
 
-   ``` bash
-    cat /etc/passwd
-   ```
+``` bash
+cat /etc/passwd
+```
 ## 4. Difference between useradd and adduser
  
  ``` bash
@@ -35,23 +35,23 @@ Linux is an open-source operating system based on the Unix architecture.
 
 ## 5. How to create users?
 
-    ``` bash
-    sudo useradd username
-    sudo adduser username
-    ```
+``` bash
+sudo useradd username
+sudo adduser username
+```
 
 ## 6. How to add a user to a group?
 
-    ``` bash
-    sudo usermod -aG <groupname> <username>
+``` bash
+sudo usermod -aG <groupname> <username>
 
-    ```
+```
 
 ## 7. How to check groups of a user?
 
-    ``` bash
-    groups username
-    ```
+``` bash
+groups username
+```
 
 ## 8. What is a process?
 
@@ -122,18 +122,18 @@ chown user:group file
 
 ### Hard Link:
 
-    ``` bash
-    ln file1 file2
-    ```
+``` bash
+ln file1 file2
+```
 - Same inode
 
 - If original is deleted, link still works
 
 ### Soft Link:
 
-    ```bash
-    ln -s file1 file2
-    ```
+```bash
+ln -s file1 file2
+```
 - Different inode
 
 - Breaks if original is removed
@@ -177,21 +177,21 @@ du = disk usage
 
 ## 13. How to check memory usage?
 
-    ``` bash
-    free -h
-    ```
+``` bash
+free -h
+```
 
 ## 14. How to find files?
 
-    ``` bash
-    find / -name filename
-    ```
+``` bash
+find / -name filename
+```
 
 ## 15. How to search inside a file?
 
-   ``` bash
-   grep "text" filename
-   ```
+``` bash
+grep "text" filename
+```
 
 ## 16. What is SSH?
 
@@ -208,17 +208,17 @@ ssh user@server-ip
 ```
 ## 18. How to check port usage?
 
-   ``` bash
-   netstat -tulnp
-   ss -tulnp
-   ```
+``` bash
+netstat -tulnp
+ss -tulnp
+```
 
 ## 19. How to check system logs?
 
-    ``` bash
-    journalctl -xe
-    tail -f /var/log/syslog
-    ```
+``` bash
+journalctl -xe
+tail -f /var/log/syslog
+```
 
 ## 20. What is a Shell?
 
