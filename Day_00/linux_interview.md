@@ -187,8 +187,51 @@ It shows: total, used, free, available RAM, and swap usage.
 
 ## 14. How to find files?
 
+✅ 1. Search file by name
+
 ``` bash
-find / -name filename
+find / -name "filename.txt"
+```
+✅ 2. Case-insensitive search
+
+``` bash
+find / -iname "app.log"
+```
+✅ 3. Search directory only
+
+``` bash
+find /var/log -type d -name "nginx"
+```
+✅ 4. Search file only
+
+``` bash
+find /opt -type f -name "*.sh"
+```
+✅ 5. Find by size
+
+``` bash
+find / -size +100M
+```
+✅ 6. Find and delete (dangerous — used carefully in prod)
+
+``` bash
+find /tmp -type f -name "*.tmp" -delete
+```
+
+✅ 7. Find recently modified files (last 1 hour)
+
+``` bash
+find /var/log -mmin -60
+```
+✅ 8. Find files modified in last 1 day
+
+``` bash
+find /home -mtime -1
+```
+✅ 9. Find by file permissions
+
+``` bash
+find / -type f -perm 644
 ```
 
 ## 15. How to search inside a file?
