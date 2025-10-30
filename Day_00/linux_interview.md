@@ -88,6 +88,12 @@ Change permissions:
 ``` bash
 chmod 755 file
 ```
+Here is the breakdown:
+
+| Permission | User (Owner) | Group | Others |
+| ---------- | ------------ | ----- | ------ |
+| **7**      | r+w+x        | r+w+x | r+w+x  |
+
 Change owner:
 
 ``` bash
