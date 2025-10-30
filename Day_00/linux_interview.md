@@ -92,7 +92,25 @@ Here is the breakdown:
 
 | Permission | User (Owner) | Group | Others |
 | ---------- | ------------ | ----- | ------ |
-| **7**      | r+w+x        | r+w+x | r+w+x  |
+| **7**      | r+w+x        | r+x   | r+x    |
+
+What does 755 mean?
+
+r (read) → 4
+
+w (write) → 2
+
+x (execute) → 1
+
+7 = 4 + 2 + 1 = rwx
+
+So:
+
+Owner: rwx → full access
+
+Group: rwx → read execute access
+
+Others: rwx → read execute access
 
 Change owner:
 
