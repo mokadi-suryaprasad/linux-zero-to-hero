@@ -20,12 +20,18 @@ Linux is an open-source operating system based on the Unix architecture.
     cat /etc/passwd
    ```
 ## 4. Difference between useradd and adduser
+ 
+ ``` bash
+ useradd
+ adduser
+ ```
+ | Feature                     | useradd           | adduser                       |
+| --------------------------- | ----------------- | ----------------------------- |
+| Type                        | Low-level command | High-level interactive script |
+| Creates home directory?     | ❌ No (unless -m)  | ✅ Yes                         |
+| Creates user with defaults? | Minimal           | Detailed setup                |
+| Preferred for?              | Scripts           | Manual user creation          |
 
-  Feature                   useradd             adduser
-  ------------------------- ------------------- -------------------------------
-  Type                      Low-level command   High-level interactive script
-  Creates home directory?   No (unless -m)      Yes
-  Preferred for?            Scripts             Manual user creation
 
 ## 5. How to create users?
 
