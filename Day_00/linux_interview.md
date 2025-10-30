@@ -92,7 +92,7 @@ Here is the breakdown:
 
 | Permission | User (Owner) | Group | Others |
 | ---------- | ------------ | ----- | ------ |
-| **7**      | r+w+x        | r+x   | r+x    |
+| **755**      | r+w+x        | r+x   | r+x    |
 
 What does 755 mean?
 
