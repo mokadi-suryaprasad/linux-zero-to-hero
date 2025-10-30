@@ -140,10 +140,10 @@ chown user:group file
 
 ## 12. How to check disk usage?
 
-    ``` bash
-    df -h
-    du -sh *
-    ``` 
+``` bash
+df -h
+du -sh *
+``` 
 1️⃣Check overall disk usage
 
 ``` bash
@@ -161,7 +161,7 @@ Use this to see disk usage of entire system.
 
 2️⃣ Check folder-wise disk usage
 
-``` bash
+```bash
 du -sh *
 ```
 du = disk usage
