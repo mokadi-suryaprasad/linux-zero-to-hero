@@ -180,6 +180,10 @@ du = disk usage
 ``` bash
 free -h
 ```
+Meaning:
+- free shows RAM usage
+- -h makes it human readable (MB/GB)
+It shows: total, used, free, available RAM, and swap usage.
 
 ## 14. How to find files?
 
