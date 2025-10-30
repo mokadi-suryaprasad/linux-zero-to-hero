@@ -134,7 +134,7 @@ chown user:group file
     ```bash
     ln -s file1 file2
     ```
-- ifferent inode
+- Different inode
 
 - Breaks if original is removed
 
