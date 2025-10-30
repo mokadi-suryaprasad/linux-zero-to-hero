@@ -144,6 +144,36 @@ chown user:group file
     df -h
     du -sh *
     ``` 
+1️⃣Check overall disk usage
+
+``` bash
+df -h
+```
+
+
+df = disk filesystem
+
+    -h → human readable (GB/MB)
+
+    Shows total size, used space, free space, and mount points.
+
+Use this to see disk usage of entire system.
+
+2️⃣ Check folder-wise disk usage
+
+``` bash
+du -sh *
+```
+du = disk usage
+
+-s → summary
+
+-h → human readable
+
+* → show size of each file/folder in current directory.
+
+✅ Use this to find which folder is occupying space.
+
 
 ## 13. How to check memory usage?
 
